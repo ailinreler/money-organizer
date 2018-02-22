@@ -23,26 +23,20 @@
       return $this->name;
     }
 
-    public function setVariableExpenses(VariableExpenses $variableExpenses)
+    public function addVariableExpenses(VariableExpenses $variableExpenses)
     {
       $this->variableExpenses = $variableExpenses;
       return $this;
     }
 
 
-    public function setFixedExpenses(FixedExpenses $fixedExpenses)
+    public function addFixedExpenses(FixedExpenses $fixedExpenses)
     {
       $this->fixedExpenses = $fixedExpenses;
       return $this;
     }
 
-    public function addVaribleExpenses($value)
-    {
-      $this->variableExpenses->total += $value;
-      return $this;
-    }
-
-    public function setBankAccount(BankAccount $bankAccount)
+    public function addBankAccount(BankAccount $bankAccount)
     {
       $this->bankAccount = $bankAccount;
 
@@ -61,14 +55,11 @@
 
 $usuario = new User;
 $usuario->setName('Ailo');
-$usuario->setVariableExpenses(new VariableExpenses(500, 'celular'));
-$usuario->setVariableExpenses(new VariableExpenses(700, 'caramelos'));
-$usuario->setFixedExpenses(new FixedExpenses(1000, 'alquiler'));
-$usuario->setBankAccount(new BankAccount('banco galicia'));
+$usuario->addVariableExpenses(new VariableExpenses(500, 'celular'));
+$usuario->addFixedExpenses(new FixedExpenses(1000, 'alquiler'));
+$usuario->addBankAccount(new BankAccount('banco galicia'));
 $usuario->bankAccount->setAmount(320);
 var_dump($usuario->variableExpenses->getTotal());
 var_dump($usuario->bankAccount->amount);
 var_dump($usuario->bankAccount->accountName);
 // var_dump($usuario->setAccountNumber(121212));
-var_dump($usuario->variableExpenses->getName(), $usuario->variableExpenses->getTotal());
-var_dump($usuario->fixedExpenses->getName(), $usuario->fixedExpenses->getTotal());

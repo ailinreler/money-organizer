@@ -4,6 +4,7 @@
 
 
     public $amount;
+    public $total;
 
 
 
@@ -12,18 +13,20 @@
       return $this->amount = $value;
     }
 
-
+    public function addAmount($value)
+    {
+      $this->total += $value;
+      return $this;
+    }
 
     public function getAmount()
     {
       return $this->amount;
     }
 
-
-
-    public function add($value)
+    public function editTotal($value)
     {
-      return $this->amount += $value;
+      $this->total = $value;
     }
 
 

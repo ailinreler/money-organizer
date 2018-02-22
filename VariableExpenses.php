@@ -7,7 +7,7 @@
 
     public $name;
 
-    public $amount = [];
+    public $amount;
 
     public $total = 0;
 
@@ -17,7 +17,9 @@
 
       $this->name = $name;
 
-      $this->amount[] = $value;
+      $this->amount = $value;
+
+      $this->total += $value;
 
       return $this->total += $value;
 
@@ -30,7 +32,7 @@
 
     public function add($value)
     {
-      $this->amount[] = $value;
+      $this->amount = $value;
 
       return $this->total += $value;
     }
