@@ -3,14 +3,14 @@
   class BankAccount{
 
 
-    public $accountNumber;
+    public $accountName;
 
     public $amount;
 
 
-    public function __construct($accountNumber, $amount = 0)
+    public function __construct($accountName)
     {
-      return $this->accountNumber = $accountNumber;
+      return $this->accountName = $accountName;
     }
 
 

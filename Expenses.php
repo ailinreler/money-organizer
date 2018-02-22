@@ -1,7 +1,7 @@
 <?php
 
-  interface Expenses{
+  abstract class Expenses{
 
-    public function __construct($value, $name);
+    public abstract function __construct($value, $name);
 
   }

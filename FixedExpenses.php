@@ -1,11 +1,11 @@
 <?php
 
-  require 'Expenses.php';
 
-
-  class VariableExpenses extends Expenses{
+  class FixedExpenses extends Expenses{
 
     public $name;
+
+    public $dueDate;
 
     public $amount = [];
 
